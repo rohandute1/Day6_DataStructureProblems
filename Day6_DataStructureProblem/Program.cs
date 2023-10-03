@@ -16,7 +16,8 @@ namespace Day6_DataStructureProblem
             {
                 Console.WriteLine("Please choose program to perform:");
                 Console.WriteLine("1.Generic class custom Linkedlist datastructure\n2.Generic class custom Stack datastructure\n" +
-                    "3.Generic class custom Queue datastructure\n4.Built-in LinkedList datastructure");
+                    "3.Generic class custom Queue datastructure\n4.Built-in LinkedList datastructure\n" +
+                    "5.Built-In Stack datastructure");
                 int select = Convert.ToInt32(Console.ReadLine());
 
                 switch (select)
@@ -113,6 +114,36 @@ namespace Day6_DataStructureProblem
 
                         Console.WriteLine("LinkedList after removing 4:");
                         operations.Print();
+                        break;
+
+                    case 5:
+                        Stack<int> stack1 = new Stack<int>();
+
+                        stack1.Push(1);
+                        stack1.Push(2);
+                        stack1.Push(3);
+
+                        Console.WriteLine("Stack Count: " + stack1.Count); 
+
+                        if (stack1.Count > 0)
+                        {
+                            int peekItem = stack1.Peek();
+                            Console.WriteLine("Peeked Item: " + peekItem); 
+                        }
+
+                        stack1.Pop();
+                        stack1.Push(4);
+
+                        if (stack1.Count > 0)
+                        {
+                            int poppItem = stack1.Pop();
+                            Console.WriteLine("Popped Item: " + poppItem); 
+                        }
+
+                        Console.WriteLine("Does the stack contain 2? " + stack1.Contains(2));
+
+                        stack1.Clear();
+                        Console.WriteLine("Stack Count after Clear: " + stack1.Count);
                         break;
                 }
                 Console.WriteLine("Do you want to continue.(yes/no)");
