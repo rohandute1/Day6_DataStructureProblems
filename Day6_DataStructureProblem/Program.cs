@@ -17,7 +17,8 @@ namespace Day6_DataStructureProblem
                 Console.WriteLine("Please choose program to perform:");
                 Console.WriteLine("1.Generic class custom Linkedlist datastructure\n2.Generic class custom Stack datastructure\n" +
                     "3.Generic class custom Queue datastructure\n4.Built-in LinkedList datastructure\n" +
-                    "5.Built-In Stack datastructure\n6.Built-In Queue datastructure");
+                    "5.Built-In Stack datastructure\n6.Built-In Queue datastructure\n" +
+                    "7.Sorted LinkedList");
                 int select = Convert.ToInt32(Console.ReadLine());
 
                 switch (select)
@@ -167,6 +168,19 @@ namespace Day6_DataStructureProblem
                         {
                             Console.WriteLine(item);
                         }
+                        break;
+
+                    case 7:
+                        SortedLinkedList<int> sortedList = new SortedLinkedList<int>();
+
+                        sortedList.InsertDescending(5);
+                        sortedList.InsertDescending(3);
+                        sortedList.InsertDescending(8);
+                        sortedList.InsertDescending(1);
+                        sortedList.InsertDescending(6);
+
+                        Console.WriteLine("Descending Sorted List:");
+                        sortedList.Print(); 
                         break;
                 }
                 Console.WriteLine("Do you want to continue.(yes/no)");
