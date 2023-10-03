@@ -16,7 +16,7 @@ namespace Day6_DataStructureProblem
             {
                 Console.WriteLine("Please choose program to perform:");
                 Console.WriteLine("1.Generic class custom Linkedlist datastructure\n2.Generic class custom Stack datastructure\n" +
-                    "3.Generic class custom Queue datastructure");
+                    "3.Generic class custom Queue datastructure\n4.Built-in LinkedList datastructure");
                 int select = Convert.ToInt32(Console.ReadLine());
 
                 switch (select)
@@ -86,6 +86,33 @@ namespace Day6_DataStructureProblem
 
                         queue.Clear();
                         Console.WriteLine("Queue Count after Clear: " + queue.Count);
+                        break;
+
+                    case 4:
+                        LinkedListOperations operations = new LinkedListOperations();
+
+                        operations.Create(1);
+                        operations.Create(2);
+                        operations.Create(3);
+
+                        Console.WriteLine("Original LinkedList:");
+                        operations.Print(); 
+
+                        int firstItem = operations.RetrieveFirst();
+                        int lastItem = operations.RetrieveLast();
+
+                        Console.WriteLine("First Item: " + firstItem); 
+                        Console.WriteLine("Last Item: " + lastItem);  
+
+                        operations.Update(2, 4);
+
+                        Console.WriteLine("Updated LinkedList:");
+                        operations.Print();
+
+                        operations.Delete(4);
+
+                        Console.WriteLine("LinkedList after removing 4:");
+                        operations.Print();
                         break;
                 }
                 Console.WriteLine("Do you want to continue.(yes/no)");
