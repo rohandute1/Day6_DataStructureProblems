@@ -15,7 +15,8 @@ namespace Day6_DataStructureProblem
             while (continueExecution)
             {
                 Console.WriteLine("Please choose program to perform:");
-                Console.WriteLine("1.Generic class custom Linkedlist datastructure\n2.Generic class custom Stack datastructure");
+                Console.WriteLine("1.Generic class custom Linkedlist datastructure\n2.Generic class custom Stack datastructure\n" +
+                    "3.Generic class custom Queue datastructure");
                 int select = Convert.ToInt32(Console.ReadLine());
 
                 switch (select)
@@ -65,6 +66,26 @@ namespace Day6_DataStructureProblem
                         stack.Pop(); 
 
                         stack.Peek();
+                        break;
+
+                    case 3:
+                        CustomQueue<int> queue = new CustomQueue<int>();
+
+                        queue.Enqueue(1);
+                        queue.Enqueue(2);
+                        queue.Enqueue(3);
+
+                        Console.WriteLine("Queue Count: " + queue.Count); 
+
+                        int dequeuedItem = queue.Dequeue();
+                        Console.WriteLine("Dequeued Item: " + dequeuedItem); 
+
+                        Console.WriteLine("Peeked Item: " + queue.Peek());
+
+                        Console.WriteLine("Does the queue contain 3? " + queue.Contains(3));
+
+                        queue.Clear();
+                        Console.WriteLine("Queue Count after Clear: " + queue.Count);
                         break;
                 }
                 Console.WriteLine("Do you want to continue.(yes/no)");
