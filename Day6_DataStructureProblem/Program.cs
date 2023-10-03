@@ -17,7 +17,7 @@ namespace Day6_DataStructureProblem
                 Console.WriteLine("Please choose program to perform:");
                 Console.WriteLine("1.Generic class custom Linkedlist datastructure\n2.Generic class custom Stack datastructure\n" +
                     "3.Generic class custom Queue datastructure\n4.Built-in LinkedList datastructure\n" +
-                    "5.Built-In Stack datastructure");
+                    "5.Built-In Stack datastructure\n6.Built-In Queue datastructure");
                 int select = Convert.ToInt32(Console.ReadLine());
 
                 switch (select)
@@ -144,6 +144,29 @@ namespace Day6_DataStructureProblem
 
                         stack1.Clear();
                         Console.WriteLine("Stack Count after Clear: " + stack1.Count);
+                        break;
+
+                    case 6:
+                        Queue<string> queue1 = new Queue<string>();
+
+                        queue1.Enqueue("Item 1");
+                        queue1.Enqueue("Item 2");
+                        queue1.Enqueue("Item 3");
+
+                        Console.WriteLine("Queue Contents:");
+                        foreach (var item in queue1)
+                        {
+                            Console.WriteLine(item);
+                        }
+
+                        string dequeuItem = queue1.Dequeue();
+                        Console.WriteLine($"Dequeued Item: {dequeuItem}");
+
+                        Console.WriteLine("Queue Contents after Dequeue:");
+                        foreach (var item in queue1)
+                        {
+                            Console.WriteLine(item);
+                        }
                         break;
                 }
                 Console.WriteLine("Do you want to continue.(yes/no)");
