@@ -15,13 +15,12 @@ namespace Day6_DataStructureProblem
             while (continueExecution)
             {
                 Console.WriteLine("Please choose program to perform:");
-                Console.WriteLine("1.Generic class custom Linkedlist datastructure");
+                Console.WriteLine("1.Generic class custom Linkedlist datastructure\n2.Generic class custom Stack datastructure");
                 int select = Convert.ToInt32(Console.ReadLine());
 
                 switch (select)
                 {
                     case 1:
-                        CustomLinkedList<int> linkedList = new CustomLinkedList<int>();
 
                         CustomLinkedList<int> customLinkedList = new CustomLinkedList<int>();
 
@@ -38,6 +37,34 @@ namespace Day6_DataStructureProblem
                         customLinkedList.Print(); 
 
                         Console.WriteLine("Does the custom linked list contain 2? " + customLinkedList.Contains(2)); 
+                        break;
+
+                    case 2:
+                        CustomStack<int> stack = new CustomStack<int>(5);
+
+                        stack.Push(1);
+                        stack.Push(2);
+                        stack.Push(3);
+
+                        Console.WriteLine("Stack Count: " + stack.Count);
+                        Console.WriteLine("Top Element: " + stack.Peek());
+
+                        int poppedItem = stack.Pop();
+                        Console.WriteLine("Popped Element: " + poppedItem);
+
+                        Console.WriteLine("Stack Count after Pop: " + stack.Count);
+
+                        stack.Clear();
+                        Console.WriteLine("Stack Count after Clear: " + stack.Count); 
+
+                        stack.Push(4);
+                        stack.Push(5);
+                        stack.Push(6); 
+
+                        stack.Clear();
+                        stack.Pop(); 
+
+                        stack.Peek();
                         break;
                 }
                 Console.WriteLine("Do you want to continue.(yes/no)");
